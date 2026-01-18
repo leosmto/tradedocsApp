@@ -39,64 +39,12 @@
       margin:0;
       color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-      background: radial-gradient(1000px 600px at 12% -15%, rgba(212,175,55,.20), transparent 60%),
-                  radial-gradient(900px 700px at 95% 10%, rgba(90,150,255,.14), transparent 60%),
-                  radial-gradient(900px 650px at 50% 115%, rgba(212,175,55,.12), transparent 60%),
-                  linear-gradient(180deg, var(--bg0), var(--bg1));
+      background: linear-gradient(180deg, var(--bg0), var(--bg1));
       overflow-x:hidden;
     }
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:1120px; margin:0 auto; padding:26px 18px 54px; position:relative; z-index:2;}
+    .wrap{max-width:1120px; margin:0 auto; padding:26px 18px 54px;}
 
-    /* ===== Aurora Motion Background ===== */
-    .aurora{
-      position:fixed; inset:-40%;
-      z-index:0;
-      filter: blur(50px) saturate(1.05);
-      opacity:.75;
-      pointer-events:none;
-    }
-    .blob{
-      position:absolute;
-      width:680px; height:680px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(246,226,122,.85), rgba(212,175,55,.25), transparent 62%);
-      mix-blend-mode: screen;
-      animation: float1 18s ease-in-out infinite;
-    }
-    .blob.b2{
-      width:760px; height:760px;
-      left:52%;
-      top:18%;
-      background: radial-gradient(circle at 40% 40%, rgba(90,150,255,.55), rgba(90,150,255,.12), transparent 60%);
-      animation: float2 22s ease-in-out infinite;
-      opacity:.70;
-    }
-    .blob.b3{
-      width:620px; height:620px;
-      left:18%;
-      top:58%;
-      background: radial-gradient(circle at 35% 35%, rgba(212,175,55,.45), rgba(212,175,55,.14), transparent 60%);
-      animation: float3 24s ease-in-out infinite;
-      opacity:.55;
-    }
-    @keyframes float1{
-      0%{transform:translate(0,0) scale(1)}
-      50%{transform:translate(120px,80px) scale(1.05)}
-      100%{transform:translate(0,0) scale(1)}
-    }
-    @keyframes float2{
-      0%{transform:translate(0,0) scale(1)}
-      50%{transform:translate(-140px,110px) scale(1.07)}
-      100%{transform:translate(0,0) scale(1)}
-    }
-    @keyframes float3{
-      0%{transform:translate(0,0) scale(1)}
-      50%{transform:translate(110px,-120px) scale(1.06)}
-      100%{transform:translate(0,0) scale(1)}
-    }
-
-    /* ===== Top Nav ===== */
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       gap:14px;
@@ -104,361 +52,71 @@
       border-radius:999px;
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow2);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      position:sticky; top:14px; z-index:30;
     }
-    .brand{display:flex; align-items:center; gap:10px; padding-left:6px;}
-    .logo{
-      width:42px;height:42px;border-radius:16px;
-      display:grid;place-items:center;
-      background:
-        radial-gradient(18px 18px at 30% 30%, rgba(246,226,122,.95), rgba(212,175,55,.65)),
-        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 14px 26px rgba(212,175,55,.18);
-      position:relative; overflow:hidden;
-    }
-    .logo:after{
-      content:"";
-      position:absolute; inset:-60%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
-      transform: rotate(25deg) translateX(-60%);
-      animation: shine 4.8s infinite ease-in-out;
-    }
-    @keyframes shine{
-      0%{transform: rotate(25deg) translateX(-60%)}
-      35%{transform: rotate(25deg) translateX(60%)}
-      100%{transform: rotate(25deg) translateX(60%)}
-    }
-    .brand h1{margin:0; font-size:14px; font-weight:950; letter-spacing:.6px; line-height:1.05;}
-    .brand span{display:block; margin-top:2px; font-size:11px; color:var(--muted2); font-weight:700; letter-spacing:.25px;}
-    .navlinks{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;}
+
+    .brand{display:flex; align-items:center; gap:10px;}
+    .brand h1{margin:0; font-size:14px; font-weight:950;}
+    .brand span{font-size:11px; color:var(--muted2);}
+
+    .navlinks{display:flex; gap:8px;}
+
     .chip{
       padding:10px 12px;
       border-radius:999px;
       background: rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.10);
-      color:rgba(255,255,255,.88);
       font-weight:850;
       font-size:12px;
-      transition:.18s;
     }
-    .chip:hover{transform: translateY(-1px); border-color: rgba(212,175,55,.35);}
+
     .chip.gold{
       background: rgba(212,175,55,.12);
       border-color: rgba(212,175,55,.35);
       color: var(--gold2);
     }
 
-    /* ===== Hero ===== */
     .hero{
       margin-top:18px;
       border-radius: var(--r26);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      background: rgba(255,255,255,.07);
       border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-1px;
-      background:
-        radial-gradient(900px 460px at 18% 0%, rgba(212,175,55,.20), transparent 60%),
-        radial-gradient(900px 520px at 95% 12%, rgba(90,150,255,.16), transparent 62%);
-      pointer-events:none;
-    }
-    .heroInner{
-      position:relative;
       padding:22px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-      align-items:stretch;
     }
-    .kicker{
-      color: rgba(246,226,122,.98);
-      font-weight:950;
-      letter-spacing:.7px;
-      font-size:12px;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
+
     .title{
       margin:0;
       font-size:46px;
-      line-height:1.03;
-      letter-spacing:-.8px;
       font-weight:980;
     }
+
     .subtitle{
       margin:12px 0 0;
       color: var(--muted);
       font-size:15px;
-      line-height:1.6;
-      max-width:54ch;
-      font-weight:650;
-    }
-    .badges{
-      margin:16px 0 0;
-      display:flex; gap:8px; flex-wrap:wrap;
-    }
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      font-size:12px;
-      font-weight:900;
-      color: rgba(255,255,255,.92);
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, var(--gold2), var(--gold));
-      box-shadow: 0 0 0 4px rgba(212,175,55,.15);
     }
 
-    .ctaRow{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+    .ctaRow{margin-top:18px; display:flex; gap:10px;}
+
     .btn{
-      border:0; cursor:pointer;
       padding:12px 14px;
       border-radius: 14px;
       font-weight:950;
       font-size:13px;
-      letter-spacing:.2px;
       display:inline-flex;
       align-items:center;
       gap:10px;
-      transition:.18s;
-      user-select:none;
-      white-space:nowrap;
     }
+
     .btnPrimary{
       background: linear-gradient(180deg, rgba(246,226,122,.96), rgba(212,175,55,.88));
       color:#14110a;
-      box-shadow: 0 16px 34px rgba(212,175,55,.22);
     }
-    .btnPrimary:hover{transform: translateY(-1px);}
+
     .btnGhost{
       background: rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.92);
-    }
-    .btnGhost:hover{transform: translateY(-1px); border-color: rgba(212,175,55,.30);}
-
-    /* ===== Phone Mock (Luxury) ===== */
-    .mock{
-      border-radius: var(--r26);
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow2);
-      padding:14px;
-      position:relative;
-      overflow:hidden;
-      transform-style:preserve-3d;
-    }
-    .mock:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(500px 220px at 30% 0%, rgba(212,175,55,.16), transparent 60%);
-      pointer-events:none;
-    }
-    .mockTop{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; position:relative;}
-    .pill{
-      padding:8px 10px;
-      border-radius:999px;
-      background: rgba(212,175,55,.10);
-      border:1px solid rgba(212,175,55,.28);
-      color: rgba(246,226,122,.96);
-      font-weight:950;
-      font-size:11px;
-      letter-spacing:.35px;
-    }
-    .mockCard{
-      margin-top:10px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
-      padding:12px;
-      position:relative;
-      overflow:hidden;
-    }
-    .mockCard:after{
-      content:"";
-      position:absolute; inset:-60%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
-      transform: rotate(25deg) translateX(-50%);
-      animation: shimmer 3.6s infinite ease-in-out;
-      opacity:.7;
-    }
-    @keyframes shimmer{
-      0%{transform: rotate(25deg) translateX(-50%)}
-      45%{transform: rotate(25deg) translateX(55%)}
-      100%{transform: rotate(25deg) translateX(55%)}
-    }
-    .miniIcon{
-      width:44px;height:44px;border-radius:16px;
-      display:grid;place-items:center;
-      background: rgba(212,175,55,.10);
-      border:1px solid rgba(212,175,55,.28);
-      box-shadow: 0 12px 22px rgba(212,175,55,.12);
-      font-size:18px;
-    }
-    .line{
-      height:10px; border-radius:999px;
-      background: rgba(255,255,255,.10);
-      margin:10px 0;
-      overflow:hidden; position:relative;
-    }
-    .line:after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
-      transform: translateX(-60%);
-      animation: sweep 2.6s infinite ease-in-out;
-    }
-    @keyframes sweep{
-      0%{transform: translateX(-60%)}
-      50%{transform: translateX(60%)}
-      100%{transform: translateX(60%)}
-    }
-    .line.short{width:68%}
-    .line.tiny{width:42%}
-
-    /* ===== Sections ===== */
-    .sectionTitle{
-      margin-top:18px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .sectionTitle h2{
-      margin:0;
-      font-size:18px;
-      font-weight:980;
-      letter-spacing:.2px;
-    }
-    .sectionTitle span{
-      color: var(--muted2);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.2px;
     }
 
-    .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:14px;}
-    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px;}
-
-    .card{
-      padding:16px;
-      border-radius: var(--r22);
-      background: var(--card);
-      border:1px solid var(--stroke);
-      box-shadow: var(--shadow2);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      position:relative;
-      overflow:hidden;
-      transform-style:preserve-3d;
-      transition: transform .18s ease, border-color .18s ease;
-      will-change: transform;
-    }
-    .card:before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:inherit;
-      border:1px solid rgba(212,175,55,.20);
-      pointer-events:none;
-      mix-blend-mode: plus-lighter;
-      opacity:.55;
-    }
-    .card:hover{border-color: rgba(212,175,55,.25)}
-    .card h3{margin:0 0 8px; font-size:14px; font-weight:980; letter-spacing:.2px;}
-    .card p{margin:0; color:var(--muted); font-size:13px; line-height:1.55; font-weight:650;}
-    .icon{
-      width:46px;height:46px;border-radius:18px;
-      display:grid;place-items:center;
-      background: rgba(212,175,55,.10);
-      border:1px solid rgba(212,175,55,.28);
-      margin-bottom:12px;
-      box-shadow: 0 14px 26px rgba(212,175,55,.12);
-      font-size:18px;
-    }
-
-    /* Stats strip */
-    .stats{
-      margin-top:14px;
-      border-radius: var(--r26);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow2);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      padding:14px;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-      position:relative;
-      overflow:hidden;
-    }
-    .stats:before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:inherit;
-      border:1px solid rgba(212,175,55,.18);
-      pointer-events:none;
-      mix-blend-mode: plus-lighter;
-      opacity:.6;
-    }
-    .stat{
-      padding:12px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      position:relative;
-      overflow:hidden;
-    }
-    .stat b{
-      display:block;
-      font-size:18px;
-      font-weight:980;
-      letter-spacing:-.3px;
-      color: rgba(246,226,122,.96);
-    }
-    .stat span{
-      display:block;
-      margin-top:4px;
-      font-size:12px;
-      font-weight:800;
-      color: var(--muted2);
-      letter-spacing:.2px;
-    }
-
-    /* FAQ */
-    .faq{margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-    details{
-      border-radius: var(--r22);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow2);
-      padding:14px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:950;
-      color: rgba(255,255,255,.92);
-      list-style:none;
-      outline:none;
-    }
-    summary::-webkit-details-marker{display:none}
-    details p{margin:10px 0 0; color:var(--muted); font-weight:650; font-size:13px; line-height:1.55;}
-
-    /* Footer */
     .footer{
       margin-top:18px;
       padding:16px;
@@ -467,49 +125,19 @@
       border:1px solid rgba(255,255,255,.10);
       display:flex;
       justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
       color: var(--muted2);
-      font-weight:750;
       font-size:12px;
-      box-shadow: var(--shadow2);
     }
-    .footer b{color: rgba(246,226,122,.96)}
 
-    /* Reveal animation */
-    .reveal{opacity:0; transform: translateY(14px) scale(.99); transition: .55s ease;}
-    .reveal.show{opacity:1; transform: translateY(0) scale(1);}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .heroInner{grid-template-columns:1fr;}
-      .title{font-size:40px;}
-      .grid3{grid-template-columns:1fr;}
-      .grid2{grid-template-columns:1fr;}
-      .stats{grid-template-columns:1fr 1fr;}
-      .faq{grid-template-columns:1fr;}
-      .nav{border-radius:22px;}
-    }
-    @media (max-width: 420px){
-      .title{font-size:34px;}
-      .stats{grid-template-columns:1fr;}
-    }
   </style>
 </head>
 
 <body>
-  <!-- Aurora motion background -->
-  <div class="aurora" aria-hidden="true">
-    <div class="blob" style="left:10%;top:0%"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-  </div>
 
   <div class="wrap">
 
     <div class="nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true">✦</div>
         <div>
           <h1>TradeDocs</h1>
           <span>Elegant • Offline • Office-grade</span>
@@ -520,217 +148,55 @@
         <a class="chip" href="#features">Features</a>
         <a class="chip" href="#templates">Templates</a>
         <a class="chip" href="#faq">FAQ</a>
-        <a class="chip gold" href="https://USERNAME.github.io/tradedocs-support">Support</a>
+        <a class="chip gold" href="mailto:leosmto@gmail.com">Support</a>
       </div>
     </div>
 
-    <section class="hero reveal">
-      <div class="heroInner">
-        <div>
-          <div class="kicker">Navy • Gold • Professional</div>
-          <h2 class="title">Trade documents that look expensive.</h2>
-          <p class="subtitle">
-            TradeDocs generates <b>Commercial Invoice</b>, <b>Proforma Invoice</b>, and <b>Packing List</b> with a clean A4 layout.
-            Export to <b>PDF</b> and keep everything stored inside your app — <b>offline-first</b>.
-          </p>
+    <section class="hero">
+      <h2 class="title">Trade documents that look expensive.</h2>
 
-          <div class="badges">
-            <div class="badge"><span class="dot"></span> Offline PDF Export</div>
-            <div class="badge"><span class="dot"></span> Document Storage</div>
-            <div class="badge"><span class="dot"></span> Fast Templates</div>
-          </div>
+      <p class="subtitle">
+        TradeDocs generates Commercial Invoice, Proforma Invoice, and Packing List with clean A4 layout.
+        Export to PDF and keep everything stored inside your app — offline-first.
+      </p>
 
-          <div class="ctaRow">
-            <a class="btn btnPrimary" href="#templates">Explore Templates →</a>
-            <a class="btn btnGhost" href="https://USERNAME.github.io/tradedocs-support">Get Support</a>
-          </div>
-
-          <p style="margin-top:10px;color:rgba(255,255,255,.45);font-size:12px;font-weight:800">
-            Replace <b>USERNAME</b> with your GitHub username.
-          </p>
-        </div>
-
-        <div class="mock" id="mock">
-          <div class="mockTop">
-            <div class="pill">OFFLINE • PDF</div>
-            <div style="color:rgba(255,255,255,.55);font-size:12px;font-weight:900">TradeDocs</div>
-          </div>
-
-          <div class="mockCard">
-            <div style="display:flex;gap:10px;align-items:center; position:relative">
-              <div class="miniIcon">📄</div>
-              <div style="flex:1; position:relative">
-                <div style="font-weight:980">Commercial Invoice</div>
-                <div style="color:rgba(255,255,255,.55);font-size:12px;font-weight:800">A4 • Professional layout</div>
-              </div>
-            </div>
-            <div class="line"></div>
-            <div class="line short"></div>
-            <div class="line tiny"></div>
-          </div>
-
-          <div class="mockCard">
-            <div style="display:flex;gap:10px;align-items:center; position:relative">
-              <div class="miniIcon">🧾</div>
-              <div style="flex:1">
-                <div style="font-weight:980">Proforma Invoice</div>
-                <div style="color:rgba(255,255,255,.55);font-size:12px;font-weight:800">Quote • Quick export</div>
-              </div>
-            </div>
-            <div class="line"></div>
-            <div class="line short"></div>
-          </div>
-
-          <div class="mockCard">
-            <div style="display:flex;gap:10px;align-items:center; position:relative">
-              <div class="miniIcon">📦</div>
-              <div style="flex:1">
-                <div style="font-weight:980">Packing List</div>
-                <div style="color:rgba(255,255,255,.55);font-size:12px;font-weight:800">Cartons • Net/Gross</div>
-              </div>
-            </div>
-            <div class="line"></div>
-            <div class="line tiny"></div>
-          </div>
-        </div>
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="#templates">Explore Templates →</a>
+        <a class="btn btnGhost" href="mailto:leosmto@gmail.com">Get Support</a>
       </div>
+
     </section>
 
-    <section class="stats reveal" aria-label="Highlights">
-      <div class="stat"><b>Offline</b><span>No internet needed</span></div>
-      <div class="stat"><b>PDF</b><span>Export A4 documents</span></div>
-      <div class="stat"><b>Storage</b><span>Save & search files</span></div>
-      <div class="stat"><b>Fast</b><span>Create in seconds</span></div>
-    </section>
-
-    <div class="sectionTitle reveal" id="features">
-      <h2>Core Features</h2>
-      <span>Built for office workflow</span>
-    </div>
-
-    <div class="grid3">
-      <div class="card reveal tilt">
-        <div class="icon">🧾</div>
-        <h3>Commercial Invoice</h3>
-        <p>Seller / buyer, items, totals, currency — professional output for export operations.</p>
-      </div>
-      <div class="card reveal tilt">
-        <div class="icon">🧮</div>
-        <h3>Proforma Invoice</h3>
-        <p>Quick quote template for negotiation, approvals, and fast PDF sharing.</p>
-      </div>
-      <div class="card reveal tilt">
-        <div class="icon">📦</div>
-        <h3>Packing List</h3>
-        <p>HS code, qty, unit, net/gross weights, totals — ready for logistics and customs.</p>
-      </div>
-    </div>
-
-    <div class="grid2">
-      <div class="card reveal tilt">
-        <div class="icon">📄</div>
-        <h3>Offline PDF Export</h3>
-        <p>Create PDFs directly on device. Perfect for factories, warehouses, and travel.</p>
-      </div>
-      <div class="card reveal tilt">
-        <div class="icon">🗂️</div>
-        <h3>Document Storage</h3>
-        <p>Import, store, search and preview all generated files inside the app.</p>
-      </div>
-    </div>
-
-    <div class="sectionTitle reveal" id="templates">
-      <h2>Templates</h2>
-      <span>Office-grade A4 layout</span>
-    </div>
-
-    <div class="grid3">
-      <div class="card reveal tilt">
-        <div class="icon">📄</div>
-        <h3>Invoice Template</h3>
-        <p>Clean structure, readable tables, and export-ready layout.</p>
-      </div>
-      <div class="card reveal tilt">
-        <div class="icon">🧾</div>
-        <h3>Proforma Template</h3>
-        <p>Quote-first template designed for professional clients.</p>
-      </div>
-      <div class="card reveal tilt">
-        <div class="icon">📦</div>
-        <h3>Packing List Template</h3>
-        <p>Perfect for shipment: cartons, weights, and marks & numbers.</p>
-      </div>
-    </div>
-
-    <div class="sectionTitle reveal" id="faq">
+    <section id="faq">
       <h2>FAQ</h2>
-      <span>Quick answers</span>
-    </div>
 
-    <div class="faq">
-      <details class="reveal">
+      <details>
         <summary>Does TradeDocs work offline?</summary>
         <p>Yes. The core templates and PDF export are designed to work offline-first.</p>
       </details>
-      <details class="reveal">
+
+      <details>
         <summary>Where are my PDFs stored?</summary>
         <p>Inside the app storage. You can search and preview them anytime.</p>
       </details>
-      <details class="reveal">
-        <summary>Can I import my own files?</summary>
-        <p>Yes. Import PDFs, images, spreadsheets, and keep them organized.</p>
-      </details>
-      <details class="reveal">
-        <summary>How do I get support?</summary>
-        <p>Use the Support page link in the top menu (GitHub Pages recommended).</p>
-      </details>
-    </div>
 
-    <div class="footer reveal">
+      <details>
+        <summary>How do I get support?</summary>
+        <p>
+          You can contact us directly via email:  
+          <a href="mailto:leosmto@gmail.com" style="text-decoration:underline">
+            leosmto@gmail.com
+          </a>
+        </p>
+      </details>
+    </section>
+
+    <div class="footer">
       <div><b>TradeDocs</b> • Navy & Gold office toolkit • Offline-first PDF</div>
-      <div>© 2026 TradeDocs • Built for export & trade operations</div>
+      <div>© 2026 TradeDocs • Contact: <a href="mailto:leosmto@gmail.com">leosmto@gmail.com</a></div>
     </div>
 
   </div>
 
-  <script>
-    // Smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, {threshold: 0.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // 3D tilt effect for cards + mock
-    function tiltify(el){
-      const max = 10;
-      el.addEventListener('mousemove', (ev)=>{
-        const r = el.getBoundingClientRect();
-        const px = (ev.clientX - r.left) / r.width;
-        const py = (ev.clientY - r.top) / r.height;
-        const rx = (py - 0.5) * -max;
-        const ry = (px - 0.5) *  max;
-        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-1px)`;
-      });
-      el.addEventListener('mouseleave', ()=>{
-        el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
-      });
-    }
-    document.querySelectorAll('.tilt').forEach(tiltify);
-    const mock = document.getElementById('mock');
-    if(mock) tiltify(mock);
-  </script>
 </body>
 </html>
